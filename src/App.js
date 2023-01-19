@@ -1,9 +1,9 @@
 import React from 'react';
-import { Callback } from './components';
+import { UseMemo } from './components';
 function App() {
   return (
     <div className='App'>
-      <Callback />
+      <UseMemo />
     </div>
   );
 }

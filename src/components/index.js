@@ -7,3 +7,4 @@ export * from './ref';
 export * from './hooks';
 export * from './forms';
 export * from './use-callback';
+export * from './use-memo';
