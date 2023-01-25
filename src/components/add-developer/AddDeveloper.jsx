@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { useFetchHook, Form, Card } from './components';
-import './App.css';
+import { useFetchHook, Form, Card } from '../../components';
+import '../../App.css';
 import Modal from 'react-modal';
 
 export function AddDeveloper() {
