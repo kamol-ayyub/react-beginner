@@ -1,9 +1,19 @@
-import React from 'react';
-import { Callback } from './components';
+import React, { Suspense, lazy } from 'react';
+
+const LazyComp = lazy(() => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(import('./components/lazy/Lazy'));
+    }, 5000);
+  });
+});
+
 function App() {
   return (
     <div className='App'>
-      <Callback />
+      <Suspense fallback={<h1>Loading...</h1>}>
+        <LazyComp />
+      </Suspense>
     </div>
   );
 }
