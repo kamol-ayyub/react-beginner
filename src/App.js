@@ -1,7 +1,9 @@
+import { ComponentAWithData, ComponentBWithData } from './components';
 function App() {
   return (
     <div className='App'>
-      <h1>wassup man</h1>
+      <ComponentAWithData />
+      <ComponentBWithData />
     </div>
   );
 }
