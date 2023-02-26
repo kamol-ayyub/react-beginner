@@ -1,11 +1,11 @@
-import React from 'react';
+import { useState, useEffect } from 'react';
 function withDataFetching(WrappedComponent, url) {
   return function (props) {
-    const [data, setData] = React.useState(null);
-    const [isLoading, setIsLoading] = React.useState(false);
-    const [error, setError] = React.useState(null);
+    const [data, setData] = useState(null);
+    const [isLoading, setIsLoading] = useState(false);
+    const [error, setError] = useState(null);
 
-    React.useEffect(() => {
+    useEffect(() => {
       setIsLoading(true);
 
       fetch(url)
