@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
-function withDataFetching(WrappedComponent, url) {
+
+function withData(Component, url) {
   return function (props) {
     const [data, setData] = useState(null);
     const [isLoading, setIsLoading] = useState(false);
@@ -7,7 +8,6 @@ function withDataFetching(WrappedComponent, url) {
 
     useEffect(() => {
       setIsLoading(true);
-
       fetch(url)
         .then((response) => response.json())
         .then((data) => {
@@ -19,62 +19,41 @@ function withDataFetching(WrappedComponent, url) {
           setError(error);
         });
     }, [url]);
-
     return (
-      <WrappedComponent
-        data={data}
-        isLoading={isLoading}
-        error={error}
-        {...props}
-      />
+      <Component data={data} isLoading={isLoading} error={error} {...props} />
     );
   };
 }
 
-function ComponentA(props) {
-  const { data, isLoading, error } = props;
-
+const FirstComponent = ({ isLoading, error, data }) => {
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <h1>Loading post</h1>;
   }
-
   if (error) {
-    return <div>Error: {error.message}</div>;
+    return <div>Something went wrong!</div>;
   }
-
   return (
     <div>
       <h1>{data?.title}</h1>
       <p>{data?.body}</p>
     </div>
   );
-}
-
-function ComponentB(props) {
-  const { data, isLoading, error } = props;
-
+};
+const SecondComponent = ({ isLoading, error, data }) => {
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <h1>Loading user</h1>;
   }
-
   if (error) {
-    return <div>Error: {error?.message}</div>;
+    return <div>Something went wrong!</div>;
   }
-
   return (
-    <ul>
-      {data?.map((item) => (
-        <li key={item.id}>{item?.title}</li>
-      ))}
-    </ul>
+    <div>
+      <h1>{data?.name}</h1>
+      <p>{data?.email}</p>
+    </div>
   );
-}
-
-export const ComponentAWithData = withDataFetching(
-  ComponentA,
-  'https://jsonplaceholder.typicode.com/posts/1'
-);
-export const ComponentBWithData = withDataFetching(
-  ComponentB,
-  'https://jsonplaceholder.typicode.com/posts'
-);
+};
+const userUrl = 'https://jsonplaceholder.typicode.com/users/1';
+const postUrl = 'https://jsonplaceholder.typicode.com/posts/1';
+export const Post = withData(FirstComponent, postUrl);
+export const User = withData(SecondComponent, userUrl);

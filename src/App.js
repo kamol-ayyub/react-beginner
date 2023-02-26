@@ -1,9 +1,9 @@
-import { ComponentAWithData, ComponentBWithData } from './components';
+import { Post, User } from './components';
 function App() {
   return (
     <div className='App'>
-      <ComponentAWithData />
-      <ComponentBWithData />
+      <Post />
+      <User />
     </div>
   );
 }

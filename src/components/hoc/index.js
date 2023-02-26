@@ -1,1 +1,1 @@
-export * from './Hoc.jsx';
+export * from './Hoc';
