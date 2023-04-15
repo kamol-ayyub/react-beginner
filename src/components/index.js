@@ -9,3 +9,4 @@ export * from './forms';
 export * from './use-callback';
 export * from './use-memo';
 export * from './hoc';
+export * from './portal';

@@ -1,9 +1,8 @@
-import { Post, User } from './components';
+import { Portal } from './components';
 function App() {
   return (
     <div className='App'>
-      <Post />
-      <User />
+      <Portal />
     </div>
   );
 }

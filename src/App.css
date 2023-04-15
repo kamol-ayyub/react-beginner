@@ -61,7 +61,7 @@ label > input {
   margin-right: 10px;
   margin-left: 20px;
 }
-button {
+/* button {
   width: 100px;
   height: 40px;
   margin-top: 30px;
@@ -69,12 +69,12 @@ button {
   border: none;
   cursor: pointer;
   transition: all 0.5s ease-in-out;
-}
+} */
 
-button:hover {
+/* button:hover {
   transition: all 0.5s ease-in-out;
   background-color: #e3eef0;
-}
+} */
 input {
   height: 20px;
   border-radius: 5px;
@@ -106,7 +106,7 @@ input {
   display: flex;
   flex-direction: column;
 }
-.modal {
+/* .modal {
   position: absolute;
   top: 5%;
   right: 15%;
@@ -115,10 +115,12 @@ input {
   width: 600px;
   background-color: rgb(225, 225, 225);
   display: flex;
-  /* align-items: center; */
   justify-content: center;
-  border-radius: 20px;
+  border-radius: 20px; 
+  
 }
+*/
+
 .buttons-wrapper {
   display: flex;
   flex-direction: column;
