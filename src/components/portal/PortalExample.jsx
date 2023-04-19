@@ -4,6 +4,7 @@ import ModalContent from './ModalContent';
 
 export default function PortalExample() {
   const [showModal, setShowModal] = useState(false);
+  const wrapper = document.querySelector('.portal-wrapper');
   return (
     <>
       <button onClick={() => setShowModal(true)}>
