@@ -1,8 +1,8 @@
-import { Portal } from './components';
+import { Todo } from './components/devtools/Todo';
 function App() {
   return (
     <div className='App'>
-      <Portal />
+      <Todo />
     </div>
   );
 }
